@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Using the command line (bash)</title>
+
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>Using the command line</h1>
+                </section>
+                <section>
+                    <h2>Disclaimer</h2>
+                    <p>Mostly about bash</p>
+                    <p>Windows cmd.exe does some of this (or powershell)</p>
+                    <div class="fragment">
+                        <p>BUT you can use git bash on windows</p>
+                        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT5_M0N6e5DKhz1HrgfEajvw9VW3E-4XbtQBfbtsPU61au7cvuSIw">
+                    </div>
+                </section>
+                <section>
+                    <h2>Command processor</h2>
+                    <p>Text (commands) -> Executing programs [ -> Text output ]</p>
+                    <pre><code class="no-highlight">
+ $ ls
+ ode-to-mc-hammer.txt ...
+                    </code></pre>
+                    <pre><code class="no-highlight">
+ $ rm my-poetry.txt 
+                    </code></pre>
+                    <pre><code class="no-highlight">
+ $ curl http://www.7digital.com
+ &lt;html lang="en-GB" ...
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>Text!</h2>
+                    <ul>
+                        <li>Text is awesome</li>
+                        <li>You can write it with a keyboard</li>
+                        <li>~100 different buttons to press!</li>
+                        <li>You can save it for later</li>
+                        <li>You can READ it after it has been saved</li>
+                        <li>You can edit it</li>
+                        <li>You can generate it easily with a program</li>
+                        <li>Common UI (on some level)</li>
+                        <li>Lots of tools for dealing with it</li>
+                        <li>e.g. your fave text editor (shoutout to vim &lt;3), diffing</li>
+                        <li>Powerful/concise UI for running programs</li>
+                        <li>e.g. an option per letter rather than 26 radio buttons</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Some Common unixy programs</h2>
+                    <p>Little programs each good at one thing (usually)</p>
+                    <ul>
+                        <li>echo</li>
+                        <li>find</li>
+                        <li>mv</li>
+                        <li>rm</li>
+                        <li>cp</li>
+                        <li>curl</li>
+                        <li>grep</li>
+                        <li>less</li>
+                        <li>head</li>
+                        <li>tail</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Help!</h2>
+                    <div class="fragment">
+                        <p>CONVENTION: --help (or -h)</li>
+                        <pre><code class="no-highlight">
+ $ ls --help
+ Usage: ls [OPTION]... [FILE]...
+ List information about the FILEs (the current directory by default).
+ Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+ 
+ Mandatory arguments to long options are mandatory for short options too.
+   -a, --all                  do not ignore entries starting with .
+ ...
+                    
+                        </code></pre>
+                    </div>
+                    <div class="fragment">
+                        <p>More in depth help: man &lt;command&gt;</p>
+                        <pre><code class="no-highlight">
+ $ man ls
+                        </code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>More conventions</h2>
+                    <ul>
+                        <li>Short option / long option</li>
+                   </ul>
+                   <pre><code class="no-highlight">
+  (from ls's help)
+
+  -a, --all    do not ignore entries starting with .
+                   </code></pre>
+                   <pre class="fragment"><code class="no-highlight">
+  $ ls -a
+  ...
+  $ ls --all
+  ...
+                   </code></pre>
+                   <ul class="fragment">
+                       <li>Long options are more readable</li>
+                   </ul>
+                   <div class="fragment">
+                       <ul>
+                           <li>Short options are dense, but combinable</li>
+                       </ul>
+                       <pre><code class="no-highlight">
+  $ ls -lahg
+                       </code></pre>
+                   </div>
+                </section>
+                <section>
+                    <ul>
+                        <li>Similar meanings, e.g. -n for "number of" something
+                            <pre><code class="no-highlight">
+ $ tail -n 5 index.html
+ ...
+ $ head -n 5 index .html
+                            </code></pre>
+                        </li>
+                        <li class="fragment">-h for "human readable"
+                            <pre><code class="no-highlight">
+ $ ls -l
+ total 88K
+ drwxr-xr-x  4 dave users 4096 Sep 29 16:16 css
+
+ $ ls -lh
+ total 88K
+ drwxr-xr-x  4 dave users 4.0K Sep 29 16:16 css
+
+ $ du -h
+ ...
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li>Wait, what?</li>
+                        <li class="fragment" data-fragment-index="1">Colliding abbreviation (-h)</li>
+                        <li class="fragment" data-fragment-index="1">(in these cases --help still works though!)</li>
+                        <li class="fragment">Other oddballs, e.g. find
+                            <pre><code class="no-highlight">
+ $ find . -iname "*.json"
+                            </code></pre>
+                        </li>
+                        <li class="fragment">Often favours power (and experience learning curve!)
+                            <pre><code class="no-highlight">
+ $ find . -name 'foo.cs' '!' -path '.git'
+                            </code></pre>
+                        </li>
+                        <li class="fragment">Program predates conventions (or maintainer is anti-social?)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>On windows (cmd.exe)</h2>
+                    <img class="fragment" src="http://www.examiner.com/images/blog/EXID20872/images/computer-thrown-out-a-window(1).JPG">
+                    <div class="fragment">
+                        <p>/? instead of -h or --help</p>
+                        <p>Switches are generally in the style /X rather than -x</p>
+                    </div>
+                </section>
+                <section>
+                    <h2>Powershell</h2>
+                    <img class="fragment" style="width: 40%" src="http://gamesdbase.com/Media/SYSTEM/Commodore_64/Box/big/Temple_of_Terror_-_1987_-_Adventuresoft_UK.jpg">
+                    <p class="fragment">... but it's what you're used to</p>
+                </section>
+                <section>
+                    <h1>Bash itself</h1>
+                </section>
+                <section>
+                    <h2>Good at</h2>
+                    <p>Helping you write commands</p>
+                    <p>Executing programs</p>
+                </section>
+                <section>
+                    <h1>Writing commands</h1>
+                </section>
+                <section>
+                    <h2>Home directory</h2>
+                    <pre><code class="no-highlight">
+ $ cd ~
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>Basic wildcards</h2>
+                    <pre><code class="no-highlight">
+ $ mv *.jpg pictures/
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>Brace expansion</h2>
+                    <pre><code class="no-highlight">
+ $ cp important-file.txt{,.bak}
+ $ ls
+ important-file.txt important-file.txt.bak
+                    </code></pre>
+                    <pre class="fragment"><code class="no-highlight">
+ $ echo {a,b}{c,d}
+ ac ad bc bd
+                    </code></pre>
+                    <pre class="fragment"><code class="no-highlight">
+ $ echo {1..10}
+ 1 2 3 4 5 6 7 8 9 10
+                    </code></pre>
+                    <pre class="fragment"><code class="no-highlight">
+ $ cat server-errors-2014-09-2{5..9}.log
+ ...
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>Looping</h2>
+                    <p>Syntax is a bit nasty</p>
+                    <pre class="fragment"><code class="no-highlight">
+ $ for i in {1..4}; do touch new-file-$i.txt; done;
+                    </code></pre>
+                    <pre class="fragment"><code class="no-highlight">
+ $ touch new-file-1.txt
+ $ touch new-file-2.txt
+ $ ...
+                    </code></pre>
+                    <p class="fragment">Brace expansion can often achieve similar results <em>depending on the command you're running</em>, e.g.</p>
+                    <pre class="fragment"><code class="no-highlight">
+ $ touch new-file-{1..4}.txt
+                    </code></pre>
+                    <pre class="fragment"><code class="no-highlight">
+ $ touch new-file-1.txt new-file-2.txt ...
+                    </code></pre>
+                    <p class="fragment">Using a scripting language can be quicker for more complex stuff</p>
+                </section>
+                <section>
+                    <h2>Keyboard shortcuts</h2>
+                    <img src="img/bash-readline.svg">
+                    <div>
+                        <ul>
+                            <li>A few readline shortcuts:
+                                <ul style="clear: both;">
+                                    <li>CTRL+W: Delete last word</li>
+                                    <li>ALT+B: Jump cursor back a word</li>
+                                    <li>CTRL+R: Search through command history</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h1>Pipes</h1>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlPjhj5fUEKLXbJvRJCewU2YdFa0tABHP0HBA14eOTREM53BlT">
+                </section>
+                <section>
+                    <h2>Pretty Code</h2>
+                    <pre><code data-trim contenteditable>
+function linkify( selector ) {
+  if( supports3DTransforms ) {
+
+    var nodes = document.querySelectorAll( selector );
+
+    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+      var node = nodes[i];
+
+      if( !node.className ) {
+        node.className += ' roll';
+      }
+    }
+  }
+}
+                    </code></pre>
+                    <p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+                </section>
+
+                <section>
+                    <h2>Spectacular image!</h2>
+                    <a class="image" href="http://lab.hakim.se/meny/" target="_blank">
+                        <img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
+                    </a>
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
