@@ -288,6 +288,35 @@
                     </div>
                 </section>
                 <section>
+                    <h1>Executing programs</h1>
+                </section>
+                <section>
+                    <h2>Streams</h2>
+                    <img style="border: 0px; background-color: transparent; box-shadow: 0 0" src="img/streams.svg">
+                </section>
+                <section>
+                    <h2>Simple command</h2>
+                    <p>e.g.</p>
+                    <pre><code class="no-highlight">
+ $ ls -lah
+                    </code></pre>
+                    <img style="border: 0px; background-color: transparent; box-shadow: 0 0" src="img/streams-bash.svg">
+                </section>
+                <section>
+                    <h2>Command substitution</h2>
+                    <pre><code class="no-highlight">
+ $ whoami
+ a-stupidly-long-username-argh-what-a-pain-to-type
+
+ $ sudo chown $(whoami) someone-elses-file.txt
+                    </code></pre>
+                    <p>This also works:</p>
+                    <pre><code class="no-highlight">
+ $ sudo chown `whoami` someone-elses-file.txt
+                    </code></pre>
+                    <p>Those are backticks. The fact I had to say that explains why $(..) is prefered. (Also backticks need to be escaped which quickly becomes a pain)</p>
+                </section>
+                <section>
                     <h1>Pipes</h1>
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlPjhj5fUEKLXbJvRJCewU2YdFa0tABHP0HBA14eOTREM53BlT">
                 </section>
