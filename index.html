@@ -317,9 +317,11 @@
                     <p>Those are backticks, $(..) is prefered.</p>
                 </section>
                 <section>
-                    <h2>Pipes</h2>
+                    <h2>Piping</h2>
                     <pre><code class="no-highlight">
  $ cat src/**/*.cs | grep ElusiveWidgetFactory
+ $ cat really-big-file.txt | less
+ $ tail -f /var/log/server/error.log | grep 500
                     </code></pre>
                     <img class="fragment" style="border: 0px; background-color: transparent; box-shadow: 0 0" src="img/streams-pipes.svg">
                     <p class="fragment">Requires stdin convention to be followed</p>
@@ -345,8 +347,10 @@
 
                 </section>
                 <section>
-                    <h2>Final thought</h2>
+                    <h2>Final thoughts</h2>
+                    <p>We didn't cover "if then else"</p>
                     <p>Don't try to do too much!</p>
+                    <p>Useful because it's everywhere</p>
                     <p>Use a real scripting language if it makes sense</p>
                 </section>
             </div>
