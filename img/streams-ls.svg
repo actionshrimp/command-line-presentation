@@ -25,7 +25,7 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="169.32043"
+     inkscape:cx="171.32043"
      inkscape:cy="134.16651"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -177,7 +177,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -194,12 +194,6 @@
        id="rect3827"
        style="fill:none;stroke:#ffffff;stroke-width:4.45101738;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
     <path
-       sodipodi:nodetypes="cc"
-       inkscape:connector-curvature="0"
-       id="path3841"
-       d="m 119.84846,162.36346 118.44049,0"
-       style="fill:#ffffff;stroke:#ffffff;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#EmptyTriangleOutL)" />
-    <path
        sodipodi:nodetypes="ccc"
        inkscape:connector-curvature="0"
        id="path3841-4"
@@ -211,18 +205,6 @@
        id="path3841-4-8"
        d="m 366.59264,198.56866 24.25111,0 -1.81062,125"
        style="fill:none;stroke:#ffffff;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#EmptyTriangleOutL)" />
-    <text
-       sodipodi:linespacing="125%"
-       id="text4537"
-       y="139.93391"
-       x="121.33135"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
-         style="fill:#ffffff;fill-opacity:1"
-         y="139.93391"
-         x="121.33135"
-         id="tspan4539"
-         sodipodi:role="line">stdin</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text4537-6"
@@ -265,17 +247,6 @@
          id="tspan6860"
          x="248.84375"
          y="388.83786">bash</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
-       x="78.84375"
-       y="174.83788"
-       id="text3837"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3839"
-         x="78.84375"
-         y="174.83788">?</tspan></text>
   </g>
   <g
      id="g6803"

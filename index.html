@@ -59,10 +59,10 @@
                     <p>Text (commands) -> Executing programs [ -> Text output ]</p>
                     <pre><code class="no-highlight">
  $ ls
- ode-to-mc-hammer.txt ...
+ sushi-cat-1.jpg sushi-cat-2.jpg sushi-cat-3.jpg ...
                     </code></pre>
                     <pre><code class="no-highlight">
- $ rm my-poetry.txt 
+ $ rm angsty-poetry.txt 
                     </code></pre>
                     <pre><code class="no-highlight">
  $ curl http://www.7digital.com
@@ -73,16 +73,13 @@
                     <h2>Text!</h2>
                     <ul>
                         <li>Text is awesome</li>
-                        <li>You can write it with a keyboard</li>
-                        <li>~100 different buttons to press!</li>
+                        <li>You can input it with all ~100 buttons on the keyboard!</li>
                         <li>You can save it for later</li>
                         <li>You can READ it after it has been saved</li>
-                        <li>You can edit it</li>
-                        <li>You can generate it easily with a program</li>
-                        <li>Common UI (on some level)</li>
                         <li>Lots of tools for dealing with it</li>
-                        <li>e.g. your fave text editor (shoutout to vim &lt;3), diffing</li>
-                        <li>Powerful/concise UI for running programs</li>
+                        <li>e.g. diffing, your fave text editor (shoutout to vim &lt;3)</li>
+                        <li>You can generate it easily with a program</li>
+                        <li>Powerful UI for running programs</li>
                         <li>e.g. an option per letter rather than 26 radio buttons</li>
                     </ul>
                 </section>
@@ -235,9 +232,9 @@
                 <section>
                     <h2>Brace expansion</h2>
                     <pre><code class="no-highlight">
- $ cp important-file.txt{,.bak}
+ $ cp production.db{,.bak}
  $ ls
- important-file.txt important-file.txt.bak
+ production.db production.db.bak
                     </code></pre>
                     <pre class="fragment"><code class="no-highlight">
  $ echo {a,b}{c,d}
@@ -263,7 +260,7 @@
  $ touch new-file-2.txt
  $ ...
                     </code></pre>
-                    <p class="fragment">Brace expansion can often achieve similar results <em>depending on the command you're running</em>, e.g.</p>
+                    <p class="fragment">Brace expansion can often achieve similar results depending on the command you're running, e.g.</p>
                     <pre class="fragment"><code class="no-highlight">
  $ touch new-file-{1..4}.txt
                     </code></pre>
@@ -300,7 +297,7 @@
                     <pre><code class="no-highlight">
  $ ls -lah
                     </code></pre>
-                    <img style="border: 0px; background-color: transparent; box-shadow: 0 0" src="img/streams-bash.svg">
+                    <img style="border: 0px; background-color: transparent; box-shadow: 0 0" src="img/streams-ls.svg">
                 </section>
                 <section>
                     <h2>Command substitution</h2>
@@ -314,7 +311,7 @@
                     <pre><code class="no-highlight">
  $ sudo chown `whoami` someone-elses-file.txt
                     </code></pre>
-                    <p>Those are backticks. The fact I had to say that explains why $(..) is prefered. (Also backticks need to be escaped which quickly becomes a pain)</p>
+                    <p>Those are backticks, $(..) is prefered.</p>
                 </section>
                 <section>
                     <h1>Pipes</h1>
