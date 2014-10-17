@@ -339,8 +339,13 @@
                 <section>
                     <h2>Piping</h2>
                     <pre><code class="no-highlight">
+ # Search all .cs files (recursively) in src/ for 'ElusiveWidgetFactory'
  $ cat src/**/*.cs | grep ElusiveWidgetFactory
+
+ # Page through 7digital.com HTML
  $ curl www.7digital.com | less
+
+ # Monitor error log file and report lines which match "500"
  $ tail -f /var/log/server/error.log | grep 500
                     </code></pre>
                     <img class="fragment" style="border: 0px; background-color: transparent; box-shadow: 0 0" src="img/streams-pipes.svg">
