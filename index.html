@@ -104,22 +104,42 @@
                     <div class="fragment">
                         <p>CONVENTION: --help (or -h)</li>
                         <pre><code class="no-highlight">
- $ ls --help
- Usage: ls [OPTION]... [FILE]...
- List information about the FILEs (the current directory by default).
- Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
- 
- Mandatory arguments to long options are mandatory for short options too.
-   -a, --all                  do not ignore entries starting with .
+ $ curl --help
+ Usage: curl [options...] &lt;url&gt;
+ Options: (H) means HTTP/HTTPS only, (F) means FTP only
+      --anyauth       Pick "any" authentication method (H)
+  -a, --append        Append to target file when uploading (F/SFTP)
+      --basic         Use HTTP Basic Authentication (H)
  ...
                     
                         </code></pre>
                     </div>
-                    <div class="fragment">
+                </section>
+                <section>
+                    <h2>The Manual</h2>
+                    <div>
                         <p>More in depth help: man &lt;command&gt;</p>
                         <pre><code class="no-highlight">
- $ man ls
+ $ man curl
+ NAME
+        curl - transfer a URL
+ 
+ SYNOPSIS
+        curl [options] [URL...]
+ 
+ DESCRIPTION
+        curl  is a tool to transfer data from or to a server...
+        RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP)...
+ 
                         </code></pre>
+                    </div>
+                    <div class="fragment">
+                        <ul>
+                            <li>Paged</li>
+                            <li>Search with /, n to go to next match, N to go back (vim shortcuts)</li>
+                            <li>Page down (up) or CTRL+D (CTRL+U)</li>
+                            <li>Same keys work for less</li>
+                        </ul>
                     </div>
                 </section>
                 <section>
@@ -156,7 +176,7 @@
                             <pre><code class="no-highlight">
  $ tail -n 5 index.html
  ...
- $ head -n 5 index .html
+ $ head -n 5 index.html
                             </code></pre>
                         </li>
                         <li class="fragment">-h for "human readable"
@@ -320,7 +340,7 @@
                     <h2>Piping</h2>
                     <pre><code class="no-highlight">
  $ cat src/**/*.cs | grep ElusiveWidgetFactory
- $ cat really-big-file.txt | less
+ $ curl www.7digital.com | less
  $ tail -f /var/log/server/error.log | grep 500
                     </code></pre>
                     <img class="fragment" style="border: 0px; background-color: transparent; box-shadow: 0 0" src="img/streams-pipes.svg">
@@ -339,10 +359,10 @@
                     </code></pre>
                     <pre class="fragment"><code class="no-highlight">
  # /dev/null becomes "nul" on windows
- $ noisy-command >/dev/null
+ $ curl -vs www.7digital.com >/dev/null
                     </code></pre>
                     <pre class="fragment"><code class="no-highlight">
- $ erroring-command 2>&1 >/dev/null | grep "a-particular-error"
+ $ run-the-tests 2>&1 >/dev/null | grep "a-particular-error"
                     </code></pre>
 
                 </section>
