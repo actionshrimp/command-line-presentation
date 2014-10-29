@@ -102,7 +102,13 @@
                 <section>
                     <h2>Help!</h2>
                     <div class="fragment">
-                        <p>CONVENTION: --help (or -h)</li>
+                    <p>For built-ins:</p>
+                    <pre><code class="no-highlight">
+ $ help
+                    </code></pre>
+                    </div>
+                    <div class="fragment">
+                        <p>For commands, CONVENTION: --help (or -h)</p>
                         <pre><code class="no-highlight">
  $ curl --help
  Usage: curl [options...] &lt;url&gt;
@@ -119,6 +125,7 @@
                     <h2>The Manual</h2>
                     <div>
                         <p>More in depth help: man &lt;command&gt;</p>
+                        <p>(May not be installed on git bash)</p>
                         <pre><code class="no-highlight">
  $ man curl
  NAME
@@ -179,6 +186,12 @@
  $ head -n 5 index.html
                             </code></pre>
                         </li>
+                        <li>-r / -R for "recursive", -f for force
+                            <pre><code class="no-highlight">
+ $ rm -rf /
+ ...
+                            </code></pre>
+                        </li>
                         <li class="fragment">-h for "human readable"
                             <pre><code class="no-highlight">
  $ ls -l
@@ -235,12 +248,16 @@
                     <p>Executing programs</p>
                 </section>
                 <section>
-                    <h1>Writing commands</h1>
-                </section>
-                <section>
-                    <h2>Home directory</h2>
+                    <h2>Home directory - save typing</h2>
                     <pre><code class="no-highlight">
  $ cd ~
+                    </code></pre>
+                    <p>Aliases serve a similar purpose</p>
+                </section>
+                <section>
+                    <h2>History</h2>
+                    <pre><code class="no-highlight">
+ $ history
                     </code></pre>
                 </section>
                 <section>
@@ -255,13 +272,15 @@
                 <section>
                     <h2>Brace expansion</h2>
                     <pre><code class="no-highlight">
- $ cp production.db{,.bak}
- $ ls
- production.db production.db.bak
-                    </code></pre>
-                    <pre class="fragment"><code class="no-highlight">
  $ echo {a,b}{c,d}
  ac ad bc bd
+                    </code></pre>
+                    <pre class="fragment"><code class="no-highlight">
+ $ ls
+ long-file-name-with-a-msitaek-in-the-middle.txt
+ $ mv long-file-name-with-a-{msitaek,mistake}-in-the-middle.txt
+ $ ls
+ long-file-name-with-a-mistake-in-the-middle.txt
                     </code></pre>
                     <pre class="fragment"><code class="no-highlight">
  $ echo {1..10}
@@ -299,9 +318,11 @@
                         <ul>
                             <li>A few readline shortcuts:
                                 <ul style="clear: both;">
+                                    <li>Tab: auto-complete filenames/directories</li>
+                                    <li>Up arrow: Last command</li>
                                     <li>CTRL+W: Delete last word</li>
                                     <li>ALT+B: Jump cursor back a word</li>
-                                    <li>CTRL+R: Search through command history</li>
+                                    <li>CTRL+R: Search through command history (and keep pressing to CTRL+R to cycle through history)</li>
                                 </ul>
                             </li>
                         </ul>
@@ -360,16 +381,21 @@
                     <h2>Redirection</h2>
                     <pre><code class="no-highlight">
  $ curl "http://api.7digital.com/1.2/release/search?q=..." \
-   | xml format > search_results.xml
+   | xml format &gt; search_results.xml
+                    </code></pre>
+                    <pre class="fragment"><code class="no-highlight">
+ echo bin &gt;&gt; .gitignore
                     </code></pre>
                     <pre class="fragment"><code class="no-highlight">
  # /dev/null becomes "nul" on windows
- $ curl -vs www.7digital.com >/dev/null
+ $ curl -vs www.7digital.com &gt;/dev/null
                     </code></pre>
                     <pre class="fragment"><code class="no-highlight">
- $ run-the-tests 2>&1 >/dev/null | grep "a-particular-error"
+ $ run-the-tests 2&gt;&1 &gt;/dev/null | grep "a-particular-error"
                     </code></pre>
-
+                    <pre class="fragment"><code class="no-highlight">
+ $ grep "something" &lt; myfile.txt
+                    </code></pre>
                 </section>
                 <section>
                     <h2>Final thoughts</h2>
